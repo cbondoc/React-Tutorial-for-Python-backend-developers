@@ -20,19 +20,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
-        <header>Data Generated From Django</header>
-        <hr></hr>
-
-        {this.state.details.map((output, id) => (
-          <div key={id}>
-            <div>
-              <h2>{output.employee}</h2>
-              <h3>{output.department}</h3>
-            </div>
-          </div>
-        ))}
-      </>
+      <div>
+        <h1>Data Generated From Django</h1>
+        <hr />
+        <table>
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Department</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.details.map((output, id) => (
+              <tr key={id}>
+                <td>{output.employee}</td>
+                <td>{output.department}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
