@@ -20,10 +20,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ textAlign: "center" }}>
         <h1>Data Generated From Django</h1>
         <hr />
-        <table>
+        <table style={{ margin: "0 auto", textAlign: "left" }}>
           <thead>
             <tr>
               <th>Employee</th>
