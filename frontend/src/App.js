@@ -5,34 +5,33 @@ class App extends React.Component {
 
   componentDidMount() {
     let data;
-    axios.get(
-      "http://localhost:8000"
-        .then((res) => {
-          data = res.data;
-          this.setState({
-            details: data,
-          });
-        })
-        .catch((err) => {
-          "Error";
-        })
-    );
+    axios
+      .get("http://localhost:8000")
+      .then((res) => {
+        data = res.data;
+        this.setState({
+          details: data,
+        });
+      })
+      .catch((err) => {
+        "Error";
+      });
   }
 
   render() {
     return (
       <>
         <header>Data Generated From Django</header>
-        <hr>
-          {this.state.details.map((output, id) => (
-            <div key={id}>
-              <div>
-                <h2>{output.employee}</h2>
-                <h2>{output.department}</h2>
-              </div>
+        <hr></hr>
+
+        {this.state.details.map((output, id) => (
+          <div key={id}>
+            <div>
+              <h2>{output.employee}</h2>
+              <h3>{output.department}</h3>
             </div>
-          ))}
-        </hr>
+          </div>
+        ))}
       </>
     );
   }
