@@ -14,7 +14,7 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        "Error";
+        console.error("Error fetching data:", err);
       });
   }
 
